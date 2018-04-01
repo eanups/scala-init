@@ -3,18 +3,14 @@
 var x = 10
 val y = 343
 
-
 // Expressions are something that do return a value
 "Hi Neo"
 x + y
 
-//Consider
+//Consider the example
 val diam = {val PI = 3.14; 2 * PI * x}
-// 2 * PI * x is an expression
-// b/w curly braces is an expression block
-
-// Scala has if/else, for loops, match as expressions unlike Java which have statements.
-// This makes functional code flow and enables composition of functions
+// where 2 * PI * x is an expression
+// between curly braces is an expression block
 
 val area =
 {
@@ -91,11 +87,11 @@ for(day <- days if day == "Mon") {
   println("Manic Monday")
 }
 
-//Nested for loops
+// Nested for loops
 for { day <- days
       i<-0 until 3} {
   println (s"Day: $day - $i")
 }
 
-//while , do-while are pure statements.
+// while , do-while are pure statements.
 

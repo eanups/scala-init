@@ -49,12 +49,12 @@ val printStr2 = printStr _
 printStr2(Seq("abc", "def"))
 
 
-
 // Procedures: Named reusable statements
 // A function that does not return anything is a procedure
 // doesn't take in something or return
 
 def greetWelcome:Unit = { println("Welcome to procs")}
+
 greetWelcome
 
 

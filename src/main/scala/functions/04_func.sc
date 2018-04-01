@@ -46,7 +46,7 @@ val someFunc2a = rectArea2 _
 someFunc2a(2,3)
 
 // Functional chaining/composing
-//With functions
+// with functions
 val getSides = (perimeter: Double) => {
   val side = perimeter / 4
   (side, side)
@@ -64,16 +64,25 @@ getSides(20)
 
 
 //Only with methods - named parameters: defaults
-def getAddress(name: String, city: String = "Bangalore", zipCode: Int = 560003): (String, String, Int) = {
+def visitPlace(name: String = "Hesarghatta", city: String = "Bangalore", zipCode: Int = 560003): (String, String, Int) = {
   println(s"Name: $name, City: $city, Postal Code: $zipCode")
   (name, city, zipCode)
 }
 
-getAddress(zipCode = 560012, name = "Neo", city = "Mangalore")
-getAddress(name="Adan", zipCode = 560055)
+visitPlace()
+visitPlace(zipCode = 260012, name = "Neo", city = "Srinagar")
+visitPlace(name="Adan", zipCode = 560055)
 
 
-// Prac
+// Function to double a list and add
+
+val add = (xList: List[Int]) => {
+  var sum = 0
+  for (i <- xList) {
+    sum += i
+  }
+  sum
+}
 
 val doubleList = (xList: List[Int]) => {
   for (num <- xList) yield {
@@ -81,4 +90,23 @@ val doubleList = (xList: List[Int]) => {
   }
 }
 
-doubleList(List(2, 3, 4, 5))
+def tripleList (xList: List[Int]) = {
+  for (num <- xList) yield {
+    num * 3
+  }
+}
+
+add(doubleList(List(2, 3, 4, 5)))
+add(tripleList(List(2, 3, 4, 5)))
+
+/*
+def adder(xL: List[Int], converter: (List[Int]) => (List[Int])  ) = {
+  add(converter(xL))
+}
+
+def tripleAdder (xl: List[Int]): Int = adder(xl, tripleList)
+tripleAdder(List(1 , 2, 3))
+
+val doubleAdder = (xl: List[Int]) => adder(xl, doubleList) : Int
+doubleAdder(List(1, 2, 3))
+*/
