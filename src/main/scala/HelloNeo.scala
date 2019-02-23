@@ -1,5 +1,3 @@
-import scala.util.parsing.json._
-
 
 object HelloNeo {
   def main(args: Array[String]): Unit = {
