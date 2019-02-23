@@ -53,19 +53,20 @@ val feeling = day.toLowerCase match {
 // massive spreadsheets
 
 
-
 val radius: Any = 10.0
-
 val typeRadius = radius match {
   case radius:Int => s"Integer: $radius"
   case radius:String => s"String: $radius"
   case radius:Float => s"Float: $radius"
   case _:AnyRef => "Any Reference"
   case _:Any => "Any "
-
 }
+// The above snippet doesn't really solve the purpose.
+// Generics is probably the right way to go
 
-var days:List[String] = List("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat")
+
+val days:List[String] = List("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat")
+
 // Yield avoids boiler plate code and by collecting the values and returning a list.
 for (day <- days) yield {
   day match {
@@ -95,3 +96,18 @@ for { day <- days
 
 // while , do-while are pure statements.
 
+// Practice
+
+def feedAnimals(animals: List[String]) :List[String] = {
+  for (animal <- animals) yield {
+    animal match {
+      case "chimp" => "Fed 3 Bananas"
+      case "dog" => "Fed 20 dog biscuits"
+      case "cat" => "Fed 0.2 litres of milk"
+      case "cow" => "Fed 0.5 kilo of grass"
+      case _ => "Fed 0.1 gms of mixed ground generic food"
+    }
+  }
+}
+
+feedAnimals(List("dog", "cat", "gorilla", "chimp"))
