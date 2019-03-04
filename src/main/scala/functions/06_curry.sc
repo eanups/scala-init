@@ -107,3 +107,21 @@ curryWithNames(compDescending)
 
 val curryWithComp = curry2Compare(compDescending)(_:String, _:String)
 curryWithComp("anup", "aditi")
+
+
+// Practice
+
+val add = (x:Int, y:Int) => x + y
+val mul = (x:Int, y:Int) => x * y
+val sub = (x:Int, y:Int) => x - y
+val div = (x:Int, y:Int) => if (y==0) 0 else x / y
+
+val calc = (x:Int, y:Int, op: (Int, Int) => Int) => {
+  op(x,y)
+}
+
+calc(3,6,add)
+calc(1,4,sub)
+calc(3,0,div)
+calc(2,5,mul)
+

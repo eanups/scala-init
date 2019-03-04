@@ -69,3 +69,23 @@ greetHello
 def greetHi: String = { "Hi dude"}
 greetHi // properties
 
+
+// Practice
+
+// Revisiting the split function to check the type and do apt function
+
+def splitter[T](obj: T, splits:Int, comment: String = "!") = {
+  obj match {
+    case obj:Long =>  obj / splits
+    case obj:Int => obj /splits
+    case obj:Double => obj / splits
+    case _ => " String or other type. Cannot split"
+  }
+}
+
+val all_split = splitter _
+
+splitter(4, 2, "Integer")
+splitter("abc", 3, "String")
+splitter(343.3435, 3)
+all_split(3434, 2, "Mandatory")
