@@ -110,3 +110,21 @@ tripleAdder(List(1 , 2, 3))
 val doubleAdder = (xl: List[Int]) => adder(xl, doubleList) : Int
 doubleAdder(List(1, 2, 3))
 */
+
+// Practice
+
+val double = (x: List[Int]) => {
+  for (num <- x) yield {
+    num * 2
+  }
+}: List[Int]
+
+def sum = (x: List[Int]) => {
+  var res = 0
+  for (num <- x) {
+    res += num
+  }
+  res
+}
+
+sum(double(List(1,3,5)))
